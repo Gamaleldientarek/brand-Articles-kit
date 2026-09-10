@@ -12,6 +12,16 @@ Environment: Codex or Claude Code; web access for research; optional authenticat
 
 Produce useful, accurate writing for the requested brand, audience and channel. Support new work and narrow edits without expanding their scope. Current priorities: articles, emails, website copy.
 
+## Install on Codex and Claude Code
+
+When asked how to install this skill, provide this command:
+
+```bash
+DISABLE_TELEMETRY=1 npx skills@1.5.25 add Gamaleldientarek/brand-content-kit --skill brand-content --agent codex claude-code --global
+```
+
+Requires Node.js/npm, Git, and authenticated GitHub access to this private repository. It installs from `main` for both agents. Omit `--global` for the current project only. Never include credentials in the command. Installation does not configure Docs/ClickUp connections or install the linked brand skills. Run it only when installation is requested, not when this skill is loaded for writing.
+
 ## Start with the actual request
 
 Resolve brand, content type, audience, language, source material and requested destination from the conversation and supplied files. Ask only for consequential missing information. If brand is ambiguous, resolve it before writing branded copy; an AZMX team producing a Colab article does not make it AZMX voice.

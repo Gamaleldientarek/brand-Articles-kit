@@ -95,11 +95,7 @@ Keep task outputs and local configuration outside this repository, for example i
 
 ## Versioning and updates
 
-The current release is tagged `v1.1.0`; earlier tags remain available. Re-run the tested add command to install the current repository version; inspect the installer's changes before replacing a locally modified skill. A project can install from the tag URL to request that release:
-
-```bash
-DISABLE_TELEMETRY=1 npx skills@1.5.25 add https://github.com/Gamaleldientarek/brand-content-kit/tree/v1.1.0/skills/brand-content --agent codex claude-code
-```
+Version `1.1.0` is available on `main`; its release tag has not been published. Use the installation command above to get the current repository version. Inspect the installer's changes before replacing a locally modified skill. Earlier published tags remain available.
 
 Keep improvements in the repository, not only in installed copies. Review source-profile changes against `references/brand-sources.json`, update the version, run checks and publish a new tag. The original upstream brand repositories are not modified by this package.
 
