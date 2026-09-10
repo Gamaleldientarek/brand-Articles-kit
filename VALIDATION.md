@@ -8,7 +8,9 @@ Completed during packaging:
 - Package review checked relative references and excluded personal machine paths, client document/card IDs, private keys, token literals and unfinished scaffold text.
 - Editorial review checked independent AZMX/Colab profiles, the three channel workflows, narrow-edit behavior, factual caveats, keyword provenance and optional tool delivery.
 
-Remote private-repository installation will be recorded after the repository is created and that test completes.
+Remote test passed: `skills@1.5.25 add Gamaleldientarek/brand-content-kit --skill brand-content --agent codex claude-code --yes` fetched the authenticated private repository into a fresh project directory, installed the universal Codex skill and the Claude Code symlink. All installed skill files matched the source. GitHub's repository metadata confirmed private visibility before upload.
+
+The tagged-release URL is provided as the installer's supported source format; the tested remote command above used the repository's main branch. Personal/global installation was intentionally not performed.
 
 Limits: unit tests and installer tests do not establish model-output quality. No independent end-to-end article/email/website generation trial in both Codex and Claude Code has been completed. The manual scenarios in `tests/behavioral-cases.md` are available for that next evaluation. No live client card or document was changed while testing this package.
 
