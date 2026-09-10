@@ -1,5 +1,10 @@
 # Colab editorial profile
 
+Canonical brand skill: **colab-design**.
+Repository: [Gamaleldientarek/colab-design](https://github.com/Gamaleldientarek/colab-design).
+Entrypoint: [colab-design/SKILL.md](https://github.com/Gamaleldientarek/colab-design/blob/main/SKILL.md).
+Load that skill for current Colab identity and visual rules; use its references and the documented Colab voice for the requested channel. This file is a scoped editorial extract; see the main skill's dependency-resolution guidance.
+
 Identity: a bilingual UX research lab serving Saudi Arabia and the wider region. It is part of the AZM X ecosystem, with its own voice and visual system. Wordmark: colab. (lowercase, one l, final period).
 
 Voice: the empathetic analyst. Curious and precise about evidence; clear and useful about its implications. Explain what a person tried to do, where they struggled, what was observed and what should be tested next.

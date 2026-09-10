@@ -3,7 +3,7 @@ name: brand-content
 description: Write, research, review and adapt AZMX or Colab articles, emails and website copy in Arabic or English. Includes keyword planning, bilingual editorial review, designer summaries, image briefs and optional Google Docs/ClickUp handoff. Use for content work, not application development or automatic publishing.
 license: LicenseRef-Proprietary
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Brand Content
@@ -32,6 +32,19 @@ Do not run the full pipeline for a request to change a title or image brief. Do 
 Always read [language and editorial rules](references/editorial.md) and exactly one brand:
 - [AZMX](references/azmx.md)
 - [Colab](references/colab.md)
+
+## Linked brand skills
+
+| Brand | Skill name | GitHub repository | Skill entrypoint |
+|---|---|---|---|
+| AZMX | `azmx-brand` | [azmx-brand](https://github.com/Gamaleldientarek/azmx-brand) | [SKILL.md](https://github.com/Gamaleldientarek/azmx-brand/blob/main/SKILL.md) |
+| Colab | `colab-design` | [colab-design](https://github.com/Gamaleldientarek/colab-design) | [SKILL.md](https://github.com/Gamaleldientarek/colab-design/blob/main/SKILL.md) |
+
+For the selected brand, load its named installed skill when available. Otherwise read its linked GitHub entrypoint and the references relevant to the requested writing or visual brief. Read only the selected brand; never apply the parent's visual rules to Colab. The upstream skill governs brand identity and voice; brand-content governs the channel workflow and handoff, subject to current user instructions.
+
+These are explicit reference dependencies, not automatically installed packages. If an upstream skill cannot be accessed, say so; the bundled editorial extract may support provisional copy, but do not claim current-brand verification or complete a task requiring unavailable brand assets. Do not silently install or modify either upstream repository.
+
+## Select the channel
 
 Then read the applicable channel:
 - [Articles](references/articles.md)

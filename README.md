@@ -1,6 +1,6 @@
 # Brand Content
 
-Private writing skill for **AZMX** and **Colab**, built around articles, emails and website copy in Arabic and English. Version **1.0.0**.
+Private writing skill for **AZMX** and **Colab**, built around articles, emails and website copy in Arabic and English. Version **1.0.1**.
 
 ## What it does
 
@@ -10,6 +10,15 @@ Private writing skill for **AZMX** and **Colab**, built around articles, emails 
 - Focused review/adaptation and optional Google Docs/ClickUp handoff without restarting completed work.
 
 Each brand has a separate editorial profile and visual-brief baseline. Full artwork still uses the current complete brand skill and approved assets. This package contains no client articles, keyword spreadsheets, credentials or workspace IDs.
+
+## Linked brand skills
+
+| Brand | Skill | Repository | Direct instructions |
+|---|---|---|---|
+| AZMX | `azmx-brand` | [GitHub](https://github.com/Gamaleldientarek/azmx-brand) | [SKILL.md](https://github.com/Gamaleldientarek/azmx-brand/blob/main/SKILL.md) |
+| Colab | `colab-design` | [GitHub](https://github.com/Gamaleldientarek/colab-design) | [SKILL.md](https://github.com/Gamaleldientarek/colab-design/blob/main/SKILL.md) |
+
+Brand Content loads the appropriate installed brand skill, or reads the linked source when needed. These links do not automatically install either skill. The brand skills supply identity and voice; this skill supplies the content workflow. Current user instructions remain authoritative.
 
 ## Install on Codex and Claude Code
 
@@ -82,10 +91,10 @@ Keep task outputs and local configuration outside this repository, for example i
 
 ## Versioning and updates
 
-The initial release is tagged `v1.0.0`. Re-run the tested add command to install the current repository version; inspect the installer's changes before replacing a locally modified skill. A project can install from the tag URL to request that release:
+The current release is tagged `v1.0.1`; `v1.0.0` remains available. Re-run the tested add command to install the current repository version; inspect the installer's changes before replacing a locally modified skill. A project can install from the tag URL to request that release:
 
 ```bash
-DISABLE_TELEMETRY=1 npx skills@1.5.25 add https://github.com/Gamaleldientarek/brand-content-kit/tree/v1.0.0/skills/brand-content --agent codex claude-code
+DISABLE_TELEMETRY=1 npx skills@1.5.25 add https://github.com/Gamaleldientarek/brand-content-kit/tree/v1.0.1/skills/brand-content --agent codex claude-code
 ```
 
 Keep improvements in the repository, not only in installed copies. Review source-profile changes against `references/brand-sources.json`, update the version, run checks and publish a new tag. The original upstream brand repositories are not modified by this package.

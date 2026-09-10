@@ -1,5 +1,10 @@
 # AZMX editorial profile
 
+Canonical brand skill: **azmx-brand**.
+Repository: [Gamaleldientarek/azmx-brand](https://github.com/Gamaleldientarek/azmx-brand).
+Entrypoint: [azmx-brand/SKILL.md](https://github.com/Gamaleldientarek/azmx-brand/blob/main/SKILL.md).
+Load that skill for current voice, audience and brand rules. This file is a scoped editorial extract; see the main skill's dependency-resolution guidance.
+
 Identity: a leading Saudi digital consultancy. Never describe AZMX as an agency, studio, boutique or the user's employer. Philosophy: “Designing the Future of Experience.”
 
 Voice: authoritative and approachable; expert enough to connect design with implementation, organisational decisions and business outcomes. Premium means restraint. No unsupported superlatives, guaranteed ROI or claims of universal leadership based solely on the brand's positioning.

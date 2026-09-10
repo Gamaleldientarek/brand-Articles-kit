@@ -1,5 +1,11 @@
 # Validation — 1.0.0
 
+## 1.0.1 reference update
+
+Verified both upstream SKILL.md paths through GitHub's contents API. Added explicit skill names, repository links, direct entrypoint links and runtime resolution instructions to the main skill, profiles and README. The structural validator and whitespace checks passed. Helper scripts and installer behavior did not change; the installation and unit-test results below describe 1.0.0.
+
+## 1.0.0 packaging results
+
 Completed during packaging:
 
 - Nine Python unit tests passed, including Arabic/English copy handling, explicit length limits, CSV/XLSX reading, row provenance, duplicate columns, unknown metrics versus zero and input-file preservation.
