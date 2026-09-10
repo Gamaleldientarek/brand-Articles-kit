@@ -1,5 +1,7 @@
 # Delivery and resuming work
 
+For an authorized full article workflow, use [clickup-workflow.md](clickup-workflow.md) to determine the next incomplete phase and its readiness criteria. This reference covers the mechanics shared by full workflows and narrow edits.
+
 Remote delivery is optional. Discover current tools and credentials; do not hard-code MCP tool names, account IDs, machine paths or ClickUp field IDs. Do not request secrets in chat.
 
 ## Capability preflight

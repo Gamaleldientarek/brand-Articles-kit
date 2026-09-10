@@ -1,6 +1,6 @@
 # Brand Content
 
-Private writing skill for **AZMX** and **Colab**, built around articles, emails and website copy in Arabic and English. Version **1.0.1**.
+Private writing skill for **AZMX** and **Colab**, built around articles, emails and website copy in Arabic and English. Version **1.1.0**.
 
 ## What it does
 
@@ -12,6 +12,10 @@ Private writing skill for **AZMX** and **Colab**, built around articles, emails 
 Each brand has a separate editorial profile and visual-brief baseline. Full artwork still uses the current complete brand skill and approved assets. This package contains no client articles, keyword spreadsheets, credentials or workspace IDs.
 
 ## Linked brand skills
+
+The complete [ClickUp workflow](skills/brand-content/references/clickup-workflow.md) covers Idea → Research → Blog Writing → Blog & Design Ideation, with actual exit criteria and runtime status/field discovery. Later design, approval and publication stages require their own completed work and authorization.
+
+The [research method](skills/brand-content/references/research.md) documents question framing, primary-source search, report-claim verification, keyword provenance, research sufficiency and bilingual evidence preservation. The [research-plan template](skills/brand-content/assets/research-plan.md) turns those findings into a reviewable outline and delivery plan.
 
 | Brand | Skill | Repository | Direct instructions |
 |---|---|---|---|
@@ -91,10 +95,10 @@ Keep task outputs and local configuration outside this repository, for example i
 
 ## Versioning and updates
 
-The current release is tagged `v1.0.1`; `v1.0.0` remains available. Re-run the tested add command to install the current repository version; inspect the installer's changes before replacing a locally modified skill. A project can install from the tag URL to request that release:
+The current release is tagged `v1.1.0`; earlier tags remain available. Re-run the tested add command to install the current repository version; inspect the installer's changes before replacing a locally modified skill. A project can install from the tag URL to request that release:
 
 ```bash
-DISABLE_TELEMETRY=1 npx skills@1.5.25 add https://github.com/Gamaleldientarek/brand-content-kit/tree/v1.0.1/skills/brand-content --agent codex claude-code
+DISABLE_TELEMETRY=1 npx skills@1.5.25 add https://github.com/Gamaleldientarek/brand-content-kit/tree/v1.1.0/skills/brand-content --agent codex claude-code
 ```
 
 Keep improvements in the repository, not only in installed copies. Review source-profile changes against `references/brand-sources.json`, update the version, run checks and publish a new tag. The original upstream brand repositories are not modified by this package.
@@ -102,8 +106,11 @@ Keep improvements in the repository, not only in installed copies. Review source
 ## Development and validation
 
 ```bash
+python3 -m pip install -r requirements-dev.txt
 python3 -m unittest discover -s tests -v
 ```
+
+[GitHub Actions](https://github.com/Gamaleldientarek/brand-content-kit/actions/workflows/ci.yml) runs on main pushes, pull requests, version tags and manual dispatch. It checks helpers and package integrity on Python 3.11/3.13, then tests `skills@1.5.25` installation for Codex and Claude Code in both copy and symlink modes. It uses read-only repository permissions, pinned official actions and synthetic fixtures; it does not call model APIs or modify client systems.
 
 See [validation notes](VALIDATION.md) for what was actually tested. [Behavioral cases](tests/behavioral-cases.md) describe future model-output evaluations; they are not automatic test results. Agent Skills structural validation does not prove editorial quality.
 

@@ -3,7 +3,7 @@ name: brand-content
 description: Write, research, review and adapt AZMX or Colab articles, emails and website copy in Arabic or English. Includes keyword planning, bilingual editorial review, designer summaries, image briefs and optional Google Docs/ClickUp handoff. Use for content work, not application development or automatic publishing.
 license: LicenseRef-Proprietary
 metadata:
-  version: "1.0.1"
+  version: "1.1.0"
 ---
 
 # Brand Content
@@ -52,6 +52,7 @@ Then read the applicable channel:
 - [Website copy](references/websites.md)
 
 Conditional references:
+- Full ClickUp article lifecycle or resuming a staged task: [Idea to ready for design](references/clickup-workflow.md).
 - Research or claim verification: [research](references/research.md).
 - Search-oriented content: [SEO](references/seo.md).
 - Designer summary, thumbnail or imagery: [visual briefs](references/visual-briefs.md).

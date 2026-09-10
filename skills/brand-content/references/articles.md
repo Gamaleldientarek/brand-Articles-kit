@@ -1,5 +1,7 @@
 # Article workflow
 
+For the complete staged ClickUp process, read [Idea to ready for design](clickup-workflow.md). It defines the research/plan outputs, transition criteria, field handling and verified handoff. For the detailed search and source-audit method, read [research.md](research.md).
+
 ## Scope and decision
 Read the card or supplied brief, original draft/report and current document tabs. Identify source language(s), existing edition(s), author, brand and requested stage. Do not assume a linked PDF is a bilingual article.
 

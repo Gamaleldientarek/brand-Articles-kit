@@ -1,4 +1,10 @@
-# Validation — 1.0.0
+# Validation history
+
+## 1.1.0 workflow and CI
+
+Added a detailed source-research method, editorial-plan template and ClickUp lifecycle with phase exit criteria, field discovery, bilingual review, designer handoff, continuation and publication boundaries.
+
+GitHub Actions is configured for Python 3.11/3.13 helper/package tests and copy/symlink installation checks on both agent paths. A configured workflow is not a successful run; consult the repository's Actions page for the actual run conclusion. These automated checks do not execute model-based writing evaluations or client mutations.
 
 ## 1.0.1 reference update
 
