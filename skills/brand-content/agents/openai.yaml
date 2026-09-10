@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Content — AZMX & Colab"
+  short_description: "Articles, emails and website copy for AZMX and Colab"
+  default_prompt: "Use $brand-content to prepare the requested AZMX or Colab content, preserving its audience, language and delivery scope."
