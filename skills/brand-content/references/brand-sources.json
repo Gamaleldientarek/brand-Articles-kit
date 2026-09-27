@@ -1,12 +1,12 @@
 {
-  "profile_version": "1.0.0",
-  "reviewed_on": "2026-09-10",
+  "profile_version": "1.2.0",
+  "reviewed_on": "2026-09-27",
   "scope": "Editorial and written-brief extracts only; full upstream skills remain production design authorities. User-approved workflow preferences are included separately in editorial.md and channel references.",
   "sources": [
     {
       "repository": "https://github.com/Gamaleldientarek/azmx-brand",
       "path": "SKILL.md",
-      "sha256": "839b2f193a98dc12726ba86a2df8ba37b21de0e0f9c72c8176595179cbbfc8b1"
+      "sha256": "377576201b572505c590d9c5759a94283dbcd5f677d19ae6e797df6b303b341f"
     },
     {
       "repository": "https://github.com/Gamaleldientarek/azmx-brand",
@@ -26,13 +26,26 @@
     {
       "repository": "https://github.com/Gamaleldientarek/colab-design",
       "path": "SKILL.md",
-      "sha256": "283a956c2317143d765ecc05712738474366d25621516a0487fece35e5acda1c"
+      "sha256": "1905088e660d923fd334f5a3fa6d009f576d76e45281f90eddbbcf77b9a820b5"
+    },
+    {
+      "repository": "https://github.com/Gamaleldientarek/colab-design",
+      "path": "references/colors.md",
+      "sha256": "66c9cd30f2dd66574925a90aa10d302f335fa24bb5188cde5eb24da64c02595e"
+    },
+    {
+      "repository": "https://github.com/Gamaleldientarek/colab-design",
+      "path": "references/rtl-arabic.md",
+      "sha256": "c959cfede283f402f02d9b6726fc5a62747d0ff3328f9dc3f0e1e6fa2fcc3d9b"
     }
   ],
   "upstream_heads_observed": {
     "azmx-brand": "6815858022e8153834fcf57708f94f4055c84de9",
-    "colab-design": "1f32c3b17ef9e8d3671cafabf8d0477d0a316fce"
+    "colab-design": "6d8544971111c0e3f34815c5995db1b8f869f897"
   },
-  "provenance_note": "Checksums describe locally installed files actually read. Observed upstream heads are recorded separately and do not assert byte equivalence with those installed files.",
+  "upstream_versions_observed": {
+    "colab-design": "4.4.1"
+  },
+  "provenance_note": "Checksums were computed from the upstream files at the observed heads. On 2026-09-27 the locally installed copies were at the same heads.",
   "refresh_policy": "Review upstream changes explicitly, compare affected brand profile and examples, validate language and brand separation, then version the package. Never silently import unrelated brand rules."
 }

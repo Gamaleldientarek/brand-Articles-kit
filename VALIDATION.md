@@ -1,5 +1,15 @@
 # Validation history
 
+## 1.2.0 voice rules, quality gate and brand sync
+
+Checked locally on 2026-09-27 before commit:
+- The full unit suite (helpers and package integrity) passed in a Python 3.13 virtual environment with `requirements-dev.txt`. New helper tests cover each added check, including a clean bilingual sample that must produce zero flags.
+- Package tests confirm the distributed instructions contain no em-dash, the SKILL.md, README, CHANGELOG and brand-sources versions agree, and SKILL.md routes to every reference file.
+- `skills@1.5.25` installed the working tree into fresh project directories in copy and symlink modes; `verify_installation.py` confirmed all 22 files byte-identical for Codex and Claude Code.
+- Brand profiles were compared against azmx-brand at `6815858` and colab-design at `6d85449` (4.4.1). Checksums in `brand-sources.json` were computed from those upstream files.
+
+Not yet done for 1.2.0: the GitHub Actions run for this commit, a remote install from the private repository, and model-output evaluation of behavioral cases 1 to 12. Consult the Actions page for the CI conclusion once pushed.
+
 ## 1.1.0 workflow and CI
 
 Added a detailed source-research method, editorial-plan template and ClickUp lifecycle with phase exit criteria, field discovery, bilingual review, designer handoff, continuation and publication boundaries.

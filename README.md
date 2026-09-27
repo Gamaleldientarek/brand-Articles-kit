@@ -1,113 +1,174 @@
 # Brand Content
 
-Private writing skill for **AZMX** and **Colab**, built around articles, emails and website copy in Arabic and English. Version **1.1.0**.
+A private agent skill for writing **AZMX** and **Colab** content in Arabic and English: articles, emails and website copy, from research to a designer-ready handoff. Works in Claude Code and Codex. Version **1.2.0**.
 
-## What it does
+It gives the agent a disciplined content workflow: resolve the brand, load only the rules the task needs, write for a real reader, check facts and voice, then deliver without touching anything it was not asked to change.
 
-- Articles: angle, research, keyword clusters, drafting, bilingual review, metadata, designer summary and two-image briefs.
-- Emails: subjects, newsletter preheaders, complete body copy and appropriate next steps. Drafting does not send messages.
-- Website copy: page purpose, hierarchy, section copy, CTA labels, relevant microcopy and search metadata.
-- Focused review/adaptation and optional Google Docs/ClickUp handoff without restarting completed work.
+## Quick start
 
-Each brand has a separate editorial profile and visual-brief baseline. Full artwork still uses the current complete brand skill and approved assets. This package contains no client articles, keyword spreadsheets, credentials or workspace IDs.
-
-## Linked brand skills
-
-The complete [ClickUp workflow](skills/brand-content/references/clickup-workflow.md) covers Idea → Research → Blog Writing → Blog & Design Ideation, with actual exit criteria and runtime status/field discovery. Later design, approval and publication stages require their own completed work and authorization.
-
-The [research method](skills/brand-content/references/research.md) documents question framing, primary-source search, report-claim verification, keyword provenance, research sufficiency and bilingual evidence preservation. The [research-plan template](skills/brand-content/assets/research-plan.md) turns those findings into a reviewable outline and delivery plan.
-
-| Brand | Skill | Repository | Direct instructions |
-|---|---|---|---|
-| AZMX | `azmx-brand` | [GitHub](https://github.com/Gamaleldientarek/azmx-brand) | [SKILL.md](https://github.com/Gamaleldientarek/azmx-brand/blob/main/SKILL.md) |
-| Colab | `colab-design` | [GitHub](https://github.com/Gamaleldientarek/colab-design) | [SKILL.md](https://github.com/Gamaleldientarek/colab-design/blob/main/SKILL.md) |
-
-Brand Content loads the appropriate installed brand skill, or reads the linked source when needed. These links do not automatically install either skill. The brand skills supply identity and voice; this skill supplies the content workflow. Current user instructions remain authoritative.
-
-## Install on Codex and Claude Code
-
-Prerequisites: Node.js/npm, Git, and GitHub access to this **private** repository. Authenticate using your existing Git credential helper, GitHub CLI or SSH configuration. Do not paste tokens into the command or commit them.
+**1. Install** (needs Node.js, Git and GitHub access to this private repository):
 
 ```bash
 DISABLE_TELEMETRY=1 npx skills@1.5.25 add Gamaleldientarek/brand-content-kit --skill brand-content --agent codex claude-code --global
 ```
 
-The public `skills` CLI is the installer; the skill contents are fetched from this private GitHub repository. There is no public npm package containing this skill. Installation does not connect Google Docs, ClickUp, search providers or email accounts.
+**2. Open a fresh agent session** so the skill is discovered.
 
-To install only in the current project, omit `--global`. Use `--copy` when copies are preferred over the installer's default symlinks. Open a fresh agent session if the new skill does not appear in an existing session.
-
-## Use
-
-Codex:
+**3. Ask for something:**
 
 ```text
-Use $brand-content to write an AZMX article from this report, in Arabic and English, with a keyword plan and designer handoff.
+/brand-content Write an AZMX article from this report, in Arabic and English, with a keyword plan and designer handoff.
 ```
-
-Claude Code:
 
 ```text
 /brand-content اكتب إيميل لكولاب يدعو فريق المنتج لمراجعة سؤال البحث. أريد الموضوع والمتن فقط.
 ```
 
-Website copy:
+In Codex, use `$brand-content` instead of `/brand-content`. The skill also loads on its own when a request mentions AZMX or Colab content.
 
-```text
-Use brand-content to write the Arabic and English copy for these two AZMX service pages. Use only the supplied service facts and flag missing proof separately.
+## What you get
+
+| Channel | Deliverables |
+|---|---|
+| **Articles** | Angle and research brief, keyword cluster with provenance, Arabic and English editions, titles and SEO metadata, four-sentence Arabic designer summary, thumbnail and image briefs |
+| **Emails** | Subject, preheader for newsletters, complete body, verified sign-off, one real next step. Drafts only; nothing is sent |
+| **Website copy** | Page purpose, H1 and section copy in reading order, CTA labels, microcopy, SEO title, description and proposed slug |
+| **Edits** | Focused review or adaptation of existing copy, preserving everything outside the request |
+| **Handoff** | Optional Google Docs tabs and ClickUp card fields, read back and verified |
+
+## How it works
+
+```mermaid
+flowchart LR
+    A[Request] --> B{Brand?}
+    B -->|AZMX| C[azmx.md + azmx-brand]
+    B -->|Colab| D[colab.md + colab-design]
+    B -->|Unclear| Q[Ask first]
+    C --> E[Channel rules]
+    D --> E
+    E --> F[Research and SEO, if needed]
+    F --> G[Write]
+    G --> H[Quality checklist + review_copy.py]
+    H --> I[Deliver locally or to Docs/ClickUp]
 ```
 
-Focused editing:
+The skill picks one of five modes so a small edit never triggers the full pipeline:
 
-```text
-Use brand-content to improve only the image briefs and add a four-sentence Arabic summary to each article card. Preserve the article body and status.
-```
+| Mode | Use it for |
+|---|---|
+| **Create** | New content through the channel workflow |
+| **Review** | Fix the requested dimensions of existing copy |
+| **Adapt** | Another audience, language or channel, same facts |
+| **Resume** | Continue a partly finished card or document |
+| **Handoff** | Move approved copy into Docs or ClickUp |
 
-NPX installs into local agent environments, including Claude Code; it does not install directly into a claude.ai chat. The portable skill directory can be packaged for another supported interface, but that interface's upload and tool requirements need separate validation.
+## Brands
+
+| Brand | Voice | Profile | Linked brand skill |
+|---|---|---|---|
+| AZMX | Mid-formal, balanced, bold but respectful; a Saudi digital consultancy, never an agency | [azmx.md](skills/brand-content/references/azmx.md) | [`azmx-brand`](https://github.com/Gamaleldientarek/azmx-brand) |
+| Colab | The empathetic analyst: rigorous in, simple out; evidence before opinion | [colab.md](skills/brand-content/references/colab.md) | [`colab-design`](https://github.com/Gamaleldientarek/colab-design) |
+
+The profiles are traceable extracts of the brand skills, pinned by checksum in [brand-sources.json](skills/brand-content/references/brand-sources.json). When the full brand skill is installed, it wins. The two brands never share voice, palette or type. Majarah, Clix and Anatomi are not profiled; the skill asks before writing for them.
+
+## Human voice
+
+Every deliverable is written to read as the work of a careful human editor, in both languages. The [editorial rules](skills/brand-content/references/editorial.md) ban em-dashes, emojis in copy, “not just X, but Y” and «ليس مجرد... بل» reframes, stock vocabulary such as *leverage*, *seamlessly* and «يلعب دورًا محوريًا», mirrored paragraphs and summaries that restate their heading. Arabic numeric ranges use an ASCII hyphen, because an en dash can render them reversed.
+
+The skill never promises that an AI detector will pass the text. Quality comes from specific claims, real evidence and varied rhythm.
 
 ## Defaults you can override
 
-- Easy standard Arabic for Saudi readers; English company/tool/technical names retained.
-- A long Article generally has 2,000–2,500 body words per edition; authored Blog Posts may be shorter.
-- Full article packages normally include Arabic and English. Other channels use requested languages.
-- Four-sentence Arabic designer summary; two images by default, maximum three unless requested otherwise.
-- Card description: summary, article link, Thumbnail Brief and Image Brief.
-- Article document tabs: Arabic, English, SEO Plan, Thumbnail Brief, Image Brief; Research & Review when useful.
+- Easy standard Arabic for Saudi readers; English names and technical terms kept in English.
+- Long articles: 2,000–2,500 body words per edition. A shorter authored Blog Post when that fits better.
+- Full article packages come in Arabic and English. Emails and pages use only the requested languages.
+- Two images per article (cover and one explanatory image), three at most.
+- ClickUp card description: Arabic summary, article link, Thumbnail Brief, Image Brief.
+- Google Doc tabs: Arabic, English, SEO Plan, Thumbnail Brief, Image Brief, and Research & Review when useful.
+- No automatic CTA, hashtags, publishing or sending.
 
-Current user instructions always override defaults. No AI-detector guarantee, invented metrics or automatic publishing.
+Anything you say in the request overrides these.
 
-## Optional helpers
+## Helper scripts
 
-Run from the installed skill directory:
+Both are read-only. Run them from the installed skill directory.
 
 ```bash
-python3 scripts/review_copy.py article.md --min-words 2000 --max-words 2500
-python3 scripts/keyword_inventory.py inventory.csv --query "تجربة المستخدم"
-python3 scripts/keyword_inventory.py inventory.xlsx --sheet Inventory --query "design system"
+python3 scripts/review_copy.py article.md --min-words 2000 --max-words 2500 --format text
 ```
 
-Copy review and CSV reading use the Python standard library. XLSX needs `openpyxl` in the chosen Python environment. The scripts are read-only. They do not validate search demand, facts, SEO success or authorship. Word counting is an estimate with documented exclusions.
+```text
+Estimated body words: 2140
+- line 9: english_stock_phrase_review 'seamlessly'
+- line 22: arabic_range_dash '25–34'
+- line 31: arabic_ai_pattern_review 'في عالم اليوم'
+```
+
+`review_copy.py` estimates body words and flags em-dashes, Arabic range dashes, emojis, repeated sentence openers, encoding problems and AI-tell phrases in English and Arabic. Kinds ending in `_review` need judgment, since quotations can match. JSON is the default output.
+
+```bash
+python3 scripts/keyword_inventory.py inventory.xlsx --sheet Inventory --query "تجربة المستخدم"
+```
+
+`keyword_inventory.py` returns matching keyword rows with sheet and row provenance, keeping blanks as unknown rather than zero. CSV needs only the standard library; XLSX needs `openpyxl`.
+
+Neither script validates facts, search demand, SEO success or authorship.
+
+## Repository layout
+
+```text
+skills/brand-content/
+  SKILL.md                    entrypoint: steps, routing table, defaults
+  references/
+    editorial.md              Arabic, English and human-voice rules
+    azmx.md, colab.md         brand profiles
+    articles.md, emails.md, websites.md
+    research.md, seo.md, visual-briefs.md
+    clickup-workflow.md, delivery.md
+    quality-checklist.md      pre-delivery gate
+    examples.md               tone and AI-tell calibration
+    brand-sources.json        upstream provenance
+  assets/                     handoff and research-plan structures
+  scripts/                    review_copy.py, keyword_inventory.py
+  agents/openai.yaml          Codex display metadata
+tests/                        unit, package and install checks; behavioral cases
+```
+
+## Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| Skill does not appear | Start a new agent session. For Claude Code, check that `~/.claude/skills/brand-content` exists; for Codex, check its skills directory. |
+| Install fails with a 404 or auth error | The repository is private. Run `gh auth login` or configure SSH, then retry. Never paste a token into the command. |
+| Project install fails in a synced folder | Project-scoped installs can fail inside Google Drive or other cloud-synced folders. Use `--global`. |
+| Output ignores the current brand guide | Install `azmx-brand` or `colab-design`. Without them the skill writes from its bundled profile and says so. |
+| `keyword_inventory.py` rejects an `.xlsx` | Install `openpyxl` in an isolated environment, or export the sheet to CSV. |
+| Docs or ClickUp handoff is skipped | The host has no authenticated connector. The skill finishes local work and reports what it could not deliver. |
 
 ## Integrations and privacy
 
-The skill uses whichever authenticated tools the host exposes, discovered at runtime. It does not bundle an MCP server or credentials. Missing integrations are reported, and locally possible work can continue.
+The skill uses whatever authenticated tools the host exposes, discovered at runtime. It bundles no MCP server, credentials, client articles, keyword spreadsheets or workspace IDs, and the package tests fail if machine paths, document IDs or token patterns appear in it.
 
-Keep task outputs and local configuration outside this repository, for example in an ignored `private/` or `runs/` directory. Do not copy the user's personal agent repository into this package. Private GitHub access controls distribution; it does not make model-provider processing local.
+Keep task outputs outside the repository, for example in an ignored `private/` or `runs/` directory. Private GitHub access controls distribution; it does not make model-provider processing local. Installing or invoking the skill never authorizes sending email, changing workflow status or publishing.
 
-## Versioning and updates
-
-Version `1.1.0` is available on `main`; its release tag has not been published. Use the installation command above to get the current repository version. Inspect the installer's changes before replacing a locally modified skill. Earlier published tags remain available.
-
-Keep improvements in the repository, not only in installed copies. Review source-profile changes against `references/brand-sources.json`, update the version, run checks and publish a new tag. The original upstream brand repositories are not modified by this package.
-
-## Development and validation
+## Development
 
 ```bash
-python3 -m pip install -r requirements-dev.txt
-python3 -m unittest discover -s tests -v
+python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
+.venv/bin/python -m unittest discover -s tests -v
 ```
 
-[GitHub Actions](https://github.com/Gamaleldientarek/brand-content-kit/actions/workflows/ci.yml) runs on main pushes, pull requests, version tags and manual dispatch. It checks helpers and package integrity on Python 3.11/3.13, then tests `skills@1.5.25` installation for Codex and Claude Code in both copy and symlink modes. It uses read-only repository permissions, pinned official actions and synthetic fixtures; it does not call model APIs or modify client systems.
+[GitHub Actions](https://github.com/Gamaleldientarek/brand-content-kit/actions/workflows/ci.yml) runs the unit and package tests on Python 3.11 and 3.13, then installs the skill with `skills@1.5.25` for Codex and Claude Code in copy and symlink modes. It uses read-only permissions, pinned actions and synthetic fixtures, and never calls a model API or a client system.
 
-See [validation notes](VALIDATION.md) for what was actually tested. [Behavioral cases](tests/behavioral-cases.md) describe future model-output evaluations; they are not automatic test results. Agent Skills structural validation does not prove editorial quality.
+[VALIDATION.md](VALIDATION.md) records what was actually tested for each version. [Behavioral cases](tests/behavioral-cases.md) describe model-output evaluations still to run; passing unit tests does not prove editorial quality.
+
+### Releasing
+
+1. Update `metadata.version` in SKILL.md, the version in this README, `profile_version` in brand-sources.json and a new top entry in [CHANGELOG.md](CHANGELOG.md). The package tests fail if they disagree.
+2. When a brand skill changed upstream, compare it, update the profile, and re-hash the sources.
+3. Run the tests, add a VALIDATION.md entry, open a pull request.
+4. After merge, tag the release (`git tag v1.2.0 && git push origin v1.2.0`) so installs can pin to it.
+
+No release tag has been published yet; installs track `main`.
 
 Sources: [Agent Skills specification](https://agentskills.io/specification), [skills installer](https://github.com/vercel-labs/skills), [Claude Code skills](https://code.claude.com/docs/en/skills).

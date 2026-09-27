@@ -30,6 +30,28 @@ Do not turn these samples into fixed slogans repeated in every output.
 يستخدم مثال حجز يتوقف فيه الشخص عند خانة غير واضحة.
 الفكرة هي الجمع بين الفحص المتكرر والبحث مع الناس لتحديد ما يحتاج إلى تحسين.”
 
+## Removing AI tells
+
+Fix the sentence by saying something specific, not by swapping synonyms.
+
+English, weak:
+“In today's fast-paced digital landscape, a design system is not just a tool, but a strategic asset that empowers teams to deliver seamless experiences.”
+
+English, better:
+“A design system starts paying for itself when two teams stop building the same date picker twice. Until then, it is a library someone has to maintain.”
+
+Arabic, weak:
+«في عالم اليوم المتسارع، لم يعد Design System مجرد أداة، بل أصبح ركيزة استراتيجية تلعب دورًا محوريًا في تمكين الفرق.»
+
+Arabic, better:
+«يبدأ Design System في توفير الوقت عندما يتوقف فريقان عن بناء المكوّن نفسه مرتين. قبل ذلك، هو مكتبة تحتاج إلى من يحافظ عليها ويحدّثها.»
+
+Email subject, weak: “Exciting news! Unlock the future of research 🚀”
+Email subject, better: “جلسات البحث تبدأ الأحد: نحتاج قائمة المشاركين”
+
+Arabic range, weak: «الفئة العمرية 25–34» (en dash, may render reversed)
+Arabic range, better: «الفئة العمرية 25-34» (ASCII hyphen)
+
 ## Concrete visual direction
 
 Weak: “صورة مستقبلية تعبر عن التعاون بين الإنسان والذكاء الاصطناعي.”
