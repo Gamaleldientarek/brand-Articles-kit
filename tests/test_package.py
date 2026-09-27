@@ -61,6 +61,26 @@ class PackageTests(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertIsNone(re.search(r'\bTODO\b|\bTBD\b|Lorem ipsum', path.read_text()))
 
+    def test_distributed_text_has_no_em_dashes(self):
+        # The skill bans em-dashes in copy, so its own instructions must not model them.
+        for path in [ROOT / 'README.md', ROOT / 'CHANGELOG.md', *SKILL.rglob('*.md'), *SKILL.rglob('*.yaml')]:
+            with self.subTest(path=path):
+                self.assertNotIn('\u2014', path.read_text(encoding='utf-8'))
+
+    def test_versions_agree(self):
+        text = (SKILL / 'SKILL.md').read_text()
+        version = yaml.safe_load(text.split('---', 2)[1])['metadata']['version']
+        changelog = (ROOT / 'CHANGELOG.md').read_text()
+        self.assertEqual(re.search(r'^## (\d+\.\d+\.\d+)', changelog, re.M).group(1), version)
+        self.assertIn(f'**{version}**', (ROOT / 'README.md').read_text())
+        self.assertEqual(json.loads((SKILL / 'references/brand-sources.json').read_text())['profile_version'], version)
+
+    def test_skill_routes_to_every_reference(self):
+        text = (SKILL / 'SKILL.md').read_text()
+        for path in (SKILL / 'references').glob('*.md'):
+            with self.subTest(path=path.name):
+                self.assertIn(f'references/{path.name}', text)
+
 
 if __name__ == '__main__':
     unittest.main()

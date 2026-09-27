@@ -11,6 +11,8 @@ Deliver:
 
 For a short individual email, do not add a preheader, SEO plan, image brief or HTML unless needed. For a sequence, state each message's job and write each message fully. Timing is proposed unless the user authorizes scheduling.
 
+No emojis in subject lines or body copy, no exclamation-mark urgency and no em-dashes. A brand's email design system may use visual chip glyphs as components; those are layout, not copy.
+
 AZMX: connect the message to the decision, delivery or outcome. Colab: connect it to the research question, evidence or learning. Do not fabricate urgency, open rates, testimonials, audience segments or personalised facts.
 
 Arabic and English editions should sound natural on their own. Preserve offers, dates, amounts, terms and qualifications exactly. Ask when a consequential commercial detail is missing; do not invent it to finish the CTA.
