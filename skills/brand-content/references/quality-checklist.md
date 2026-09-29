@@ -63,6 +63,7 @@ Run this once, at the end, before presenting or delivering any artifact. Check o
 
 - [ ] The document and card were read back after writing, and the link opens the intended file.
 - [ ] Brief copies in the card and document match.
+- [ ] Article card moving into the design-handoff status or later: the card-field gate in [clickup-workflow.md](clickup-workflow.md) section 8 passed on a fresh read-back; each row left empty (Publication Date not yet agreed, an out-of-scope edition's title) is named; any other empty row, including unfound title or Content Type fields, and any title or SEO Keywords mismatch held the move until it was set or answered. Rows found nowhere and empty required fields outside the table are named. Narrow edit: only the fields the request touches changed, and empty rows are reported.
 - [ ] Status moved only if requested or part of an authorized full workflow, and only as far as the evidence allows.
 - [ ] Retries did not create duplicate files or cards.
 

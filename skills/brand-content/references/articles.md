@@ -29,6 +29,6 @@ Use visual-briefs.md for the default two images. Cover earns attention; internal
 - Titles, SEO metadata and keyword plan.
 - Separate Thumbnail Brief and Image Brief.
 - Source/review notes when material.
-- Card summary and article link when remote handoff is requested.
+- Card summary, article link and the card fields in [clickup-workflow.md](clickup-workflow.md) section 8 when a remote handoff is requested.
 
 Use delivery.md for native document tabs and fields. A corrected article does not mean the source PDF was repaired. Record a source-report blocker in the review tab and retain that dependency when simplifying a card.

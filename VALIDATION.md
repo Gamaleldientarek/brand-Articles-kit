@@ -1,5 +1,13 @@
 # Validation history
 
+## 1.3.0 ClickUp card-field gate
+
+Checked locally on 2026-09-29 before commit:
+- The full unit suite (25 tests) passed in a Python 3.13 virtual environment with `requirements-dev.txt`, including version agreement, the em-dash ban, link resolution and the leak scan, which now also rejects UUIDs and numeric IDs of 12 or more digits alongside task and document URLs, machine paths and credentials. A planted custom-field UUID and list ID made the scan fail as expected. Bare task IDs outside URLs are not detected.
+- Five rounds of independent review against the diff, with a simplification of the gate wording after round four; round five walked five scenarios (hidden title fields, a plain move request, an Arabic-only article, a brief-only edit, an author-typed title) and its one finding was fixed, plus cold-read checks in which a fresh agent read only the skill: title fields the card does not show until set (set and confirmed before the design move), a brief-only narrow edit (fields and status unchanged, empty fields reported), and a list with no Persona field (reported as not used, no field created).
+
+Not yet done for 1.3.0: the GitHub Actions run for this commit, a remote install, and model-output evaluation of behavioral case 13 against a synthetic ClickUp list.
+
 ## 1.2.0 voice rules, quality gate and brand sync
 
 Checked locally on 2026-09-27 before commit:

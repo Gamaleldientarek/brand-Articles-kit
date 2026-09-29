@@ -2,6 +2,23 @@
 
 All notable changes to the brand-content skill. Versions follow semantic versioning: a major bump changes a default a user relies on, a minor bump adds capability, a patch fixes wording or tooling.
 
+## 1.3.0 (2026-09-29)
+
+**Added**
+- Card-field gate in `clickup-workflow.md` section 8: a table of the article card's fields (Brand, Author Name, Content Type, Target Audience fields, Persona, AR and EN title fields, SEO Keywords, Publication Date) with the plan section each value comes from. It runs before an article card moves into the design-handoff status or any later status, including a plain move request, and passes when every found row holds a value on read-back. Only two rows may stay empty, both named in the report: Publication Date until a date is agreed, and a title row for an edition outside a recorded language limit. Any other empty row holds the move until it is set or the user answers. Earlier status moves are not gated.
+- Field discovery: the map combines the card's own read, the list, folder and space listings and a filled card of the same type in the same space; a field counts as found even when the card does not show it yet; a same-name duplicate uses the user-designated field or is asked about; every value is confirmed on read-back.
+- A blocked-field path: a found field that cannot be set holds the move and is reported; missing title or Content Type fields hold the move until the user answers; no custom fields are created. Required fields outside the table are reported, never guessed.
+- Behavioral case 13 for fields a list listing does not show.
+- The package leak test also rejects UUIDs and numeric IDs of 12 or more digits, which covers custom-field IDs and long list IDs. Bare task IDs are still caught only inside task URLs.
+
+**Changed**
+- Preservation rule for card fields: empty rows are filled; existing values are kept; a title or SEO Keywords value that disagrees with the current draft is updated only when the session set or changed that H1 or chose that keyword cluster, or the user asked for the change; otherwise the mismatch is reported and holds the move until the user answers. Judgment values (Persona, a single-choice audience) come from the editorial plan's lead audience and are named in the report.
+- Narrow edits change only the fields the request touches (a title change updates its title field) and may move status when asked; a move that triggers the gate runs it first.
+- Section 1 now reads the card's own custom fields as well as the list metadata. Section 9, `delivery.md`, `quality-checklist.md` and SKILL.md (step 5 and the routing table) use the same trigger wording, and `articles.md` points to the gate. Behavioral case 6 now expects empty card fields to be reported, not filled, in a narrow edit.
+
+**Fixed**
+- A full handoff could finish with the AR and EN title fields empty, because field discovery relied on the list listing alone and the title step read as optional.
+
 ## 1.2.0 (2026-09-27)
 
 **Added**

@@ -46,7 +46,8 @@ class PackageTests(unittest.TestCase):
     def test_no_client_state_or_machine_paths_in_distributed_skill(self):
         patterns = [r'/Users/', r'/var/folders/', r'app\.clickup\.com/t/',
                     r'docs\.google\.com/document/d/', r'BEGIN (?:OPENSSH |RSA )?PRIVATE KEY',
-                    r'gh[pousr]_[A-Za-z0-9]{20,}', r'github_pat_[A-Za-z0-9_]{20,}']
+                    r'gh[pousr]_[A-Za-z0-9]{20,}', r'github_pat_[A-Za-z0-9_]{20,}',
+                    r'\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b', r'\b\d{12,}\b']
         for path in SKILL.rglob('*'):
             if not path.is_file() or '__pycache__' in path.parts:
                 continue

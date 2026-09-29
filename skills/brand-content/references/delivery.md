@@ -23,9 +23,9 @@ Default article-card description:
 
 Keep detailed research/SEO in the document, not repeated in the card description. Preserve a material publication dependency in the review artifact; removing card clutter must not erase the only record of it.
 
-Map AR title, EN title, SEO Keywords and Content Type by observed field name AND type/scope. Similar duplicate fields can exist at task-type and list level: prefer the user-designated fields; if ambiguous, resolve before writing. Do not assume dropdown labels are API values.
+Before an article card moves into the design-handoff status or any later status, run the card-field gate in [clickup-workflow.md](clickup-workflow.md) section 8, following its discovery and preservation rules. In a narrow edit, change only the fields the request touches (a title change also updates its title field), leave the rest unchanged, and report empty rows. Map fields by observed name AND type/scope. Similar duplicate fields can exist at task-type and list level: prefer the user-designated fields; if ambiguous, resolve before writing. Do not assume dropdown labels are API values. Read the card back after writing.
 
-Change workflow status only when requested or included in an authorized full workflow. Discover valid options and preserve assignments/dates. “Design ideation” is not publication approval.
+Change workflow status only when requested or included in an authorized full workflow. A move into the design-handoff status or any later status first runs that gate. Discover valid options and preserve assignments/dates. “Design ideation” is not publication approval.
 
 ## Reliable continuation
 Use a local task note outside the skill repository recording artifact URLs, language/stage, last verified revision and remaining work. This is task state, never package content. Before creating a file on retry, check whether the prior creation succeeded. On uncertain writes, read back before repeating. Stop and report unresolved failures after bounded retries; don't create duplicates.

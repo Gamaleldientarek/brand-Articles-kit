@@ -12,7 +12,7 @@ That is not designed artwork, author approval, SEO implementation or publication
 
 Open the supplied task ID/link. Read description, brand, content type, author, title fields, keywords, audience, dates, assignments, attachments and subtasks relevant to the request. Read pertinent comments when they contain editorial decisions; do not post a comment unless authorized.
 
-Discover the list's available statuses and field metadata. Identify whether title fields belong to the list or to the task type. Duplicate labels do not prove identical fields. Use the fields designated by the user; map their current IDs and values at runtime.
+Discover the list's available statuses and field metadata, and read this card with its custom fields; neither is a complete inventory (see section 8, Field discovery). Identify whether title fields belong to the list or to the task type. Duplicate labels do not prove identical fields. Use the fields designated by the user; map their current IDs and values at runtime.
 
 Follow the current article/report link and enumerate every document tab before editing. Find the actual Arabic and English editions, research, SEO and brief tabs. Note existing user edits and gaps. Do not create another document simply because an older conversation used a different title.
 
@@ -80,13 +80,41 @@ Confirm article text did not absorb briefs, metadata or internal instructions. E
 
 The description contains only the current Arabic summary, article link, Thumbnail Brief and Image Brief. Detailed research/SEO remains in the linked document. Do not retain an obsolete raw draft beneath the current brief unless explicitly requested; preserve a reference copy locally or in an authorized source artifact before replacement.
 
-Populate the observed AR Article/Blog Title, EN Article/Blog Title, SEO Keywords and Content Type fields when included in scope. Similar names or capitalization are not sufficient reason to guess IDs. Preserve author, brand, audience, assignees, publication date and priority unless a requested change requires them.
+### Card fields: a gate before the design handoff
+
+The gate runs before an article card moves into the design-handoff status (section 9, typically observed as Blog & Design Ideation) or any later status, whether that move is part of a full workflow, a complete-package request or a plain request to move the card. Until it passes, the card does not move. Earlier status moves are not gated.
+
+The gate passes when every field in the table below that field discovery found holds a value on a fresh read-back. Two rows may stay empty, each named in the report: Publication Date, until a real date is agreed, and a title row for an edition that is out of scope. Any other empty row holds the move until it is set or the user answers. A field counts as found even when the card does not show it yet. An edition is out of scope only when a language limit is recorded in the request, the card or the document; otherwise both title rows apply, and a missing edition is asked about before the move.
+
+Anything else on an existing card is a narrow edit. Change only the fields the request touches; a title change also updates its title field. Leave other fields unchanged, and the status unless the request moves it; a move that triggers the gate runs it first. Report any empty rows by name.
+
+Field names are as observed on the team's article cards; map their IDs at runtime and never write them into this skill.
+
+| Field | Value | Source |
+|---|---|---|
+| Brand | the resolved brand | section 1 |
+| Author Name | the confirmed byline, a person or the brand; ask if unknown | section 1 |
+| Content Type | Article or Blog Post | section 2 |
+| Target Audience fields (text and dropdown, where both exist) | the audience in the editorial plan | section 3 |
+| Persona | the lead audience in the editorial plan | section 3 |
+| AR Article/Blog Title | the final Arabic H1 | section 5; update whenever the title changes |
+| EN Article/Blog Title | the final English H1 | section 5; same |
+| SEO Keywords | the chosen cluster; provenance labels stay in the SEO Plan tab | section 5 |
+| Publication Date | a real, agreed date only | when agreed |
+
+**Field discovery.** Neither a list's field listing nor a card's own field read is a complete inventory: a card can accept task-type, folder or space fields it does not show until they hold a value. Build the field map from this card read with its custom fields, the list, folder and space listings, and a recent card of the same task type in the same space whose title fields are filled. A field seen only on that reference card may be task-type scoped or tied to another list; set it by ID on this card and read back to find out. If two fields share a name, use the one the user designated; if still ambiguous, ask before writing. Set values by ID, write dropdowns by option, then read the card back with custom fields and confirm every row. A field missing from the read-back counts as empty; re-read once before reporting. An update that reports success does not prove the value was stored.
+
+**When a field cannot be set.** If a found field rejects the value, has no option that fits the plan, or is still empty on read-back, the card does not move to design; report the field name, the error and where it was found, and ask the user. If no source above has the field, report it as not used on this list; for the AR and EN title fields and Content Type, ask, and the card does not move until the user answers. Never create, rename or attach custom fields to make a row fit.
+
+**Preserving values.** Fill a row when it is empty. Keep every existing value, plus assignees and priority. When an existing title or SEO Keywords value disagrees with the current draft, update it only if this session set or changed that H1 (or chose that keyword cluster) or the user asked for the field change; otherwise keep it, name the mismatch and ask, and the card does not move until the user answers. Any other existing value that disagrees with the plan is kept and named in the report. When a row's value is a judgment, such as Persona or a single-choice audience dropdown, take it from the lead audience in the editorial plan and name the choice in the report.
+
+**Required fields outside the table** stay unchanged even when a value seems inferable from the work. Report each empty one by name and ask for its value; it does not hold the design move under this gate. If ClickUp itself rejects the status change because of one, leave the card where it is, report the rejection and ask.
 
 When briefs exist both in the card and document, synchronize the authorized copies. Keep article URLs distinct from public publishing URLs. A private editing link belongs in the internal card, not in public article copy.
 
 ## 9. Verify, then mark ready for design
 
-Read back the card and document. Check: both requested editions exist; titles are current; the URL opens the intended document; summary/briefs match; fields hold the expected values; untouched tabs and task fields remain unchanged.
+Read back the card and document. Check: both requested editions exist; titles are current; the URL opens the intended document; summary/briefs match; the section 8 card-field gate passes, with each row left empty named in the report; unfound AR or EN title fields or Content Type, and any title or SEO Keywords mismatch, have been answered by the user; rows found nowhere and empty required fields outside the table are named in the report; untouched tabs and task fields remain unchanged.
 
 Typical observed target: **Blog & Design Ideation**. Transition only after the writing/brief handoff is actually complete and the full workflow or that move was authorized. Report remaining publication dependencies alongside the handoff. Do not claim Published or Approved.
 
