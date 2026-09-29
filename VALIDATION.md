@@ -1,5 +1,9 @@
 # Validation history
 
+## 1.3.1 documentation
+
+Wording-only change to README and SKILL.md (public repository, current repository name, published tags). The full unit suite passed locally. No skill behaviour changed.
+
 ## 1.3.0 ClickUp card-field gate
 
 Checked locally on 2026-09-29 before commit:

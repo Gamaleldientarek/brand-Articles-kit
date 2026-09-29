@@ -2,6 +2,11 @@
 
 All notable changes to the brand-content skill. Versions follow semantic versioning: a major bump changes a default a user relies on, a minor bump adds capability, a patch fixes wording or tooling.
 
+## 1.3.1 (2026-09-29)
+
+**Fixed**
+- README and SKILL.md described the repository as private and required GitHub authentication; it is public. The install command and CI link now use the current repository name, `Gamaleldientarek/brand-Articles-kit` (the old `brand-content-kit` address redirects). The privacy note now says plainly that anything committed is public, and the release note lists the published tags.
+
 ## 1.3.0 (2026-09-29)
 
 **Added**
