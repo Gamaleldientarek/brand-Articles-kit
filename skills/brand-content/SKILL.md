@@ -3,7 +3,7 @@ name: brand-content
 description: "Write, research, review and adapt AZMX or Colab content in Arabic and English: articles and blog posts, emails and newsletters, and website page copy. Use when the user asks to draft, edit, translate, localise, shorten or fact-check copy for AZMX, AZM X or Colab; to plan keywords or SEO metadata for an article or page; to write a designer summary or thumbnail and image briefs; to run the Idea-to-design ClickUp article workflow; or to hand finished copy to Google Docs or ClickUp. Also triggers on Arabic requests such as اكتب مقال، مقالة، مدونة، إيميل، رسالة، نشرة بريدية، نصوص صفحة، محتوى الموقع، ترجمة، مراجعة لغوية، ملخص للمصمم، or وصف صورة when AZMX or Colab is the brand. Not for building websites, producing final artwork, social media posts, or sending and publishing anything."
 license: LicenseRef-Proprietary
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Brand Content
@@ -46,7 +46,7 @@ Always read [language and editorial rules](references/editorial.md) and exactly 
 | Article or blog post | [articles.md](references/articles.md) |
 | Email, newsletter or sequence | [emails.md](references/emails.md) |
 | Website page copy | [websites.md](references/websites.md) |
-| Full ClickUp article lifecycle, or resuming a staged card | [clickup-workflow.md](references/clickup-workflow.md) |
+| Full ClickUp article lifecycle, resuming a staged card, or moving an article card to design | [clickup-workflow.md](references/clickup-workflow.md) |
 | Factual claims, reports or current tools | [research.md](references/research.md) |
 | Keywords, metadata, slugs, internal links | [seo.md](references/seo.md) |
 | Designer summary, thumbnail or image briefs | [visual-briefs.md](references/visual-briefs.md) |
@@ -92,7 +92,7 @@ Helpers are optional and read-only:
 
 ## 5. Verify before delivering
 
-Run [quality-checklist.md](references/quality-checklist.md) for the sections that apply. Review meaning, source support, brand, Arabic/English naturalness, human voice and the requested length. Check titles against the final content and ensure each illustration explains its own section. Fix what fails; report what cannot be fixed.
+Run [quality-checklist.md](references/quality-checklist.md) for the sections that apply. Review meaning, source support, brand, Arabic/English naturalness, human voice and the requested length. Check titles against the final content and ensure each illustration explains its own section. Fix what fails; report what cannot be fixed. Before an article card moves into the design-handoff status or any later status, run the card-field gate in [clickup-workflow.md](references/clickup-workflow.md) section 8.
 
 ## 6. Deliver and report
 

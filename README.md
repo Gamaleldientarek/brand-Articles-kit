@@ -1,6 +1,6 @@
 # Brand Content
 
-A private agent skill for writing **AZMX** and **Colab** content in Arabic and English: articles, emails and website copy, from research to a designer-ready handoff. Works in Claude Code and Codex. Version **1.2.0**.
+A private agent skill for writing **AZMX** and **Colab** content in Arabic and English: articles, emails and website copy, from research to a designer-ready handoff. Works in Claude Code and Codex. Version **1.3.0**.
 
 It gives the agent a disciplined content workflow: resolve the brand, load only the rules the task needs, write for a real reader, check facts and voice, then deliver without touching anything it was not asked to change.
 
@@ -167,7 +167,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 1. Update `metadata.version` in SKILL.md, the version in this README, `profile_version` in brand-sources.json and a new top entry in [CHANGELOG.md](CHANGELOG.md). The package tests fail if they disagree.
 2. When a brand skill changed upstream, compare it, update the profile, and re-hash the sources.
 3. Run the tests, add a VALIDATION.md entry, open a pull request.
-4. After merge, tag the release (`git tag v1.2.0 && git push origin v1.2.0`) so installs can pin to it.
+4. After merge, tag the release (`git tag vX.Y.Z && git push origin vX.Y.Z`) so installs can pin to it.
 
 No release tag has been published yet; installs track `main`.
 
