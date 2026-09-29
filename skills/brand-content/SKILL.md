@@ -3,7 +3,7 @@ name: brand-content
 description: "Write, research, review and adapt AZMX or Colab content in Arabic and English: articles and blog posts, emails and newsletters, and website page copy. Use when the user asks to draft, edit, translate, localise, shorten or fact-check copy for AZMX, AZM X or Colab; to plan keywords or SEO metadata for an article or page; to write a designer summary or thumbnail and image briefs; to run the Idea-to-design ClickUp article workflow; or to hand finished copy to Google Docs or ClickUp. Also triggers on Arabic requests such as اكتب مقال، مقالة، مدونة، إيميل، رسالة، نشرة بريدية، نصوص صفحة، محتوى الموقع، ترجمة، مراجعة لغوية، ملخص للمصمم، or وصف صورة when AZMX or Colab is the brand. Not for building websites, producing final artwork, social media posts, or sending and publishing anything."
 license: LicenseRef-Proprietary
 metadata:
-  version: "1.3.0"
+  version: "1.3.1"
 ---
 
 # Brand Content
@@ -17,10 +17,10 @@ Produce useful, accurate, human-sounding writing for the requested brand, audien
 When asked how to install this skill, provide this command:
 
 ```bash
-DISABLE_TELEMETRY=1 npx skills@1.5.25 add Gamaleldientarek/brand-content-kit --skill brand-content --agent codex claude-code --global
+DISABLE_TELEMETRY=1 npx skills@1.5.25 add Gamaleldientarek/brand-Articles-kit --skill brand-content --agent codex claude-code --global
 ```
 
-Requires Node.js/npm, Git, and authenticated GitHub access to this private repository. It installs from `main` for both agents. Omit `--global` for the current project only. Never include credentials in the command. Installation does not configure Docs/ClickUp connections or install the linked brand skills. Run it only when installation is requested, not when this skill is loaded for writing.
+Requires Node.js/npm and Git. The repository is public, so no GitHub login is needed. It installs from `main` for both agents. Omit `--global` for the current project only. Never include credentials in the command. Installation does not configure Docs/ClickUp connections or install the linked brand skills. Run it only when installation is requested, not when this skill is loaded for writing.
 
 ## 1. Start with the actual request
 

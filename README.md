@@ -1,15 +1,15 @@
 # Brand Content
 
-A private agent skill for writing **AZMX** and **Colab** content in Arabic and English: articles, emails and website copy, from research to a designer-ready handoff. Works in Claude Code and Codex. Version **1.3.0**.
+A public agent skill for writing **AZMX** and **Colab** content in Arabic and English: articles, emails and website copy, from research to a designer-ready handoff. Works in Claude Code and Codex. Version **1.3.1**.
 
 It gives the agent a disciplined content workflow: resolve the brand, load only the rules the task needs, write for a real reader, check facts and voice, then deliver without touching anything it was not asked to change.
 
 ## Quick start
 
-**1. Install** (needs Node.js, Git and GitHub access to this private repository):
+**1. Install** (needs Node.js and Git; no GitHub login required):
 
 ```bash
-DISABLE_TELEMETRY=1 npx skills@1.5.25 add Gamaleldientarek/brand-content-kit --skill brand-content --agent codex claude-code --global
+DISABLE_TELEMETRY=1 npx skills@1.5.25 add Gamaleldientarek/brand-Articles-kit --skill brand-content --agent codex claude-code --global
 ```
 
 **2. Open a fresh agent session** so the skill is discovered.
@@ -139,7 +139,7 @@ tests/                        unit, package and install checks; behavioral cases
 | Problem | Fix |
 |---|---|
 | Skill does not appear | Start a new agent session. For Claude Code, check that `~/.claude/skills/brand-content` exists; for Codex, check its skills directory. |
-| Install fails with a 404 or auth error | The repository is private. Run `gh auth login` or configure SSH, then retry. Never paste a token into the command. |
+| Install fails with a 404 | Check the repository name: `Gamaleldientarek/brand-Articles-kit` (the old `brand-content-kit` address redirects). The repository is public, so no login is needed; never paste a token into the command. |
 | Project install fails in a synced folder | Project-scoped installs can fail inside Google Drive or other cloud-synced folders. Use `--global`. |
 | Output ignores the current brand guide | Install `azmx-brand` or `colab-design`. Without them the skill writes from its bundled profile and says so. |
 | `keyword_inventory.py` rejects an `.xlsx` | Install `openpyxl` in an isolated environment, or export the sheet to CSV. |
@@ -149,7 +149,7 @@ tests/                        unit, package and install checks; behavioral cases
 
 The skill uses whatever authenticated tools the host exposes, discovered at runtime. It bundles no MCP server, credentials, client articles, keyword spreadsheets or workspace IDs, and the package tests fail if machine paths, document IDs or token patterns appear in it.
 
-Keep task outputs outside the repository, for example in an ignored `private/` or `runs/` directory. Private GitHub access controls distribution; it does not make model-provider processing local. Installing or invoking the skill never authorizes sending email, changing workflow status or publishing.
+The repository is public: anything committed here is visible to anyone. Keep task outputs, client articles, keyword data and workspace IDs out of it, for example in an ignored `private/` or `runs/` directory. Using the skill does not make model-provider processing local. Installing or invoking the skill never authorizes sending email, changing workflow status or publishing.
 
 ## Development
 
@@ -158,7 +158,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-[GitHub Actions](https://github.com/Gamaleldientarek/brand-content-kit/actions/workflows/ci.yml) runs the unit and package tests on Python 3.11 and 3.13, then installs the skill with `skills@1.5.25` for Codex and Claude Code in copy and symlink modes. It uses read-only permissions, pinned actions and synthetic fixtures, and never calls a model API or a client system.
+[GitHub Actions](https://github.com/Gamaleldientarek/brand-Articles-kit/actions/workflows/ci.yml) runs the unit and package tests on Python 3.11 and 3.13, then installs the skill with `skills@1.5.25` for Codex and Claude Code in copy and symlink modes. It uses read-only permissions, pinned actions and synthetic fixtures, and never calls a model API or a client system.
 
 [VALIDATION.md](VALIDATION.md) records what was actually tested for each version. [Behavioral cases](tests/behavioral-cases.md) describe model-output evaluations still to run; passing unit tests does not prove editorial quality.
 
@@ -169,6 +169,6 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 3. Run the tests, add a VALIDATION.md entry, open a pull request.
 4. After merge, tag the release (`git tag vX.Y.Z && git push origin vX.Y.Z`) so installs can pin to it.
 
-No release tag has been published yet; installs track `main`.
+Published release tags include v1.0.0, v1.0.1, v1.2.0 and v1.3.0. Installs without a pinned tag track `main`.
 
 Sources: [Agent Skills specification](https://agentskills.io/specification), [skills installer](https://github.com/vercel-labs/skills), [Claude Code skills](https://code.claude.com/docs/en/skills).
